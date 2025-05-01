@@ -1,0 +1,117 @@
+---
+import xlg from "../assets/x-lg.svg";
+---
+
+<div class="popover open">
+  <button class="close"><img src={xlg.src} alt="Fechar" /></button>
+  <p class="roboto">
+    <span>Responsabilidade Civil Profissional</span>
+    <br />
+    Simule sem compromisso
+  </p>
+  <a
+    href="https://www.rc4vc.com/cotacao/medplus"
+    target="_blank"
+    rel="noopener noreferrer"
+    ><button class="roboto simulate">Simular</button></a
+  >
+</div>
+
+<script>
+  const close = document.querySelector(".close")!;
+  const popover = document.querySelector(".popover")!;
+
+  close.addEventListener("click", () => {
+    popover.classList.remove("open");
+  });
+</script>
+<style>
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translate(0, -20px);
+    }
+    to {
+      opacity: 1;
+      transform: translate(0, 0);
+    }
+  }
+
+  .popover {
+    margin: 16px 0;
+    background-color: #016ebc34;
+    border: 1px solid #016ebc;
+    border-radius: 8px;
+    box-shadow:
+      0 4px 6px -1px rgb(0 0 0 / 0.2),
+      0 2px 4px -2px rgb(0 0 0 / 0.2),
+      0 0 10px rgb(0 0 0 / 0.1);
+    width: 90%;
+    opacity: 0;
+    visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 0;
+    gap: 8px;
+    text-align: center;
+
+    @media (min-width: 900px) {
+      flex-direction: row;
+      justify-content: space-between;
+      padding: 12px 48px;
+      align-items: center;
+      text-align: left;
+    }
+
+    .close {
+      all: unset;
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      color: white;
+      border: none;
+      padding: 8px;
+      cursor: pointer;
+
+      img {
+        width: 16px;
+        height: 16px;
+      }
+    }
+
+    p {
+      font-size: 16px;
+      margin: 0;
+      margin-top: 16px;
+
+      @media (min-width: 900px) {
+        margin-top: 0;
+      }
+
+      span {
+        font-weight: 500;
+      }
+    }
+
+    .simulate {
+      background-color: #016ebc;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      padding: 8px 16px;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: 500;
+      text-transform: uppercase;
+      padding: 8px 32px;
+    }
+  }
+
+  .popover.open {
+    opacity: 1;
+    visibility: visible;
+    animation: fadeIn 1s ease-out forwards;
+  }
+</style>

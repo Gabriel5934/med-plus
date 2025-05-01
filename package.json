@@ -1,0 +1,18 @@
+{
+  "name": "med-plus",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev --host",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@tailwindcss/vite": "^4.1.4",
+    "astro": "^5.7.5",
+    "daisyui": "^5.0.28",
+    "install": "^0.13.0",
+    "tailwindcss": "^4.1.4"
+  }
+}

@@ -1,0 +1,77 @@
+---
+import caretRightFill from "../assets/caret-right-fill.svg";
+
+interface Props {
+  title: string;
+  description: string;
+  src: string;
+}
+
+const { title, description, src } = Astro.props;
+---
+
+<div
+  class="container"
+  onclick={`document.getElementById('${title}' + '_modal').showModal()`}
+>
+  <div>
+    <img src={src} alt="" /><span class="roboto">{title}</span>
+  </div>
+  <img src={caretRightFill.src} alt="" />
+</div>
+
+<dialog id={title + "_modal"} class="modal">
+  <div class="modal-box">
+    <h3 class="font-bold text-lg">{title}</h3>
+    <p class="py-4">{description}</p>
+  </div>
+  <form method="dialog" class="modal-backdrop">
+    <button>close</button>
+  </form>
+</dialog>
+
+<style>
+  .modal {
+    max-width: unset;
+
+    button,
+    form {
+      max-width: unset;
+    }
+  }
+
+  .container {
+    min-width: 300px;
+    background-color: white;
+    border-radius: 16px;
+    padding: 16px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+
+    > img {
+      width: 24px;
+      height: 24px;
+    }
+
+    div {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+
+      span {
+        font-size: 24px;
+        font-weight: 700;
+        color: #0a3f69;
+      }
+
+      img {
+        width: 48px;
+        height: 48px;
+      }
+    }
+  }
+</style>

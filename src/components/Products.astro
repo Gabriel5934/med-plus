@@ -1,0 +1,66 @@
+---
+import Product from "./Product.astro";
+import coin from "../assets/coin.svg";
+import stethoscope from "../assets/stethoscope.png";
+import piggy from "../assets/piggy.svg";
+import people from "../assets/people.svg";
+import doctor from "../assets/doctor.png";
+import plane from "../assets/airplane.svg";
+---
+
+<div class="shared-container flex" id="products">
+  <p class="p1">Principais Produtos</p>
+  <div class="products">
+    <Product
+      title="Seguro de Renda"
+      description={`
+        A segurança financeira que você precisa para enfrentar os desafios da vida.
+        Imagine que você, como profissional da saúde, precise se afastar do trabalho por causa de uma doença, acidente ou cirurgia.
+        O Seguro de renda garante o pagamento de sua renda mensal durante o período de afastamento. Você terá a tranquilidade de saber que seus compromissos financeiros continuarão sendo atendidos, mesmo nos momentos mais desafiadores.
+
+        O SEGURO DE RENDA lhe dá a Possibilidade de se dedicar ao tratamento, sem se preocupar com questões financeiras e retornar à carreira quando estiver recuperado.
+      `}
+      src={coin.src}
+    />
+    <Product
+      title="Seguro de Vida"
+      description={`
+        Ao contrário da crença comum de que o seguro de vida está associado apenas à morte, a maioria das suas coberturas e benefícios são destinados a serem utilizados em vida.
+        O seguro de vida prevê pagamento do capital segurado aos beneficiários e possui coberturas que podem ser usadas em vida, como por exemplo: Invalidez por Acidente ou doença, Auxílio Funeral, Incapacidade Temporária, entre outras. 
+      `}
+      src={people.src}
+    />
+    <Product
+      title="Seguro de Doenças Graves (DG30)"
+      description={`
+        O seguro Doenças Graves é uma cobertura que oferece ajuda financeira caso o segurado seja diagnosticado com alguma doença grave: Câncer (leve, moderado ou grave), Infarto, AVC, Embolia pulmonar, Alzheimer, Perda de visão, Parkinson, Paralisia de membros, Esclerose múltipla e Osteomielite, entre outras. Ou seja, é um seguro para ser usado em vida, uma vez que o tratamento de uma doença pode gerar altos custos médicos, além de impedir que o segurado trabalhe, comprometendo a sua renda.
+
+        A cobertura tem como objetivo reduzir os impactos financeiros e trazer mais segurança e tranquilidade durante esses momentos sensíveis para que o segurado possa focar no que realmente importa: sua saúde e recuperação. O seguro Doenças Graves pode ajudar a cobrir os gastos com tratamento, manter as contas em dia e preservar o seu padrão de vida.
+      `}
+      src={stethoscope.src}
+    />
+    <Product
+      title="Responsabilidade Civil Profissional"
+      description={`
+        Erros acontecem, mas eles não precisam custar sua reputação ou o sucesso do seu trabalho. Com o seguro certo, você trabalha com a tranquilidade de saber que imprevistos financeiros não vão comprometer sua carreira.
+        O principal objetivo do produto de responsabilidade civil é proteger o segurado de eventuais reclamações ou ações na Justiça em que seja responsabilizado civilmente por ter causado danos involuntários a outra pessoa.
+        Dentre as principais coberturas, podemos destacar: custos de defesa com honorários advocatícios, indenizações por importâncias devidas a terceiros em decorrência de condenações judiciais, acordos judiciais ou extrajudiciais.
+      `}
+      src={doctor.src}
+    />
+    <Product
+      title="Previdência Privada Complementar"
+      description={`
+        Planeje seu futuro agora. Com uma Previdência Privada, você pode acumular e investir recursos para aproveitar a aposentadoria. Investir em um plano de previdência privada é uma decisão inteligente para garantir tranquilidade financeira no futuro. Ao explorar os diferentes tipos de previdência privada, você pode encontrar a opção que melhor se adapta aos seus objetivos e perfil financeiro.
+      `}
+      src={piggy.src}
+    />
+    <Product
+      title="Seguro Viagem"
+      description={`
+        O Seguro Viagem é um item básico e deve estar presente em todas as viagens, seja a passeio ou a negócios, pois ele pode evitar danos e muitos outros transtornos. Principais Coberturas do Seguro Viagem: Acidentes Pessoais, Assistência médica, odontológica, remoção intra-hospitalar, extravio de bagagens, dentre outras coberturas.
+      `}
+      src={plane.src}
+    />
+  </div>
+</div>

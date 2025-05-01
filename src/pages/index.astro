@@ -1,0 +1,140 @@
+---
+import Hero from "../components/Hero.astro";
+import Nav from "../components/Nav.astro";
+import Layout from "../layouts/Layout.astro";
+import Photos from "../components/Photos.astro";
+import Description from "../components/Description.astro";
+import Products from "../components/Products.astro";
+import Partners from "../components/Partners.astro";
+import Investments from "../components/Investments.astro";
+import Contact from "../components/Contact.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<Layout>
+  <div class="start">
+    <Nav />
+    <Hero />
+  </div>
+
+  <Photos />
+  <Description />
+  <Products />
+  <Partners />
+  <Investments />
+  <Contact />
+
+  <Footer />
+</Layout>
+
+<style is:global>
+  @import "tailwindcss";
+  @plugin "daisyui" {
+    themes: light;
+  }
+
+  .start {
+    height: 100svh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .shared-container {
+    padding: 32px 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    * {
+      max-width: 900px;
+    }
+  }
+
+  .roboto {
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+  }
+
+  .p1 {
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+
+    font-size: 32px;
+    font-weight: 700;
+    color: #0a3f69;
+    text-align: center;
+
+    margin: 0;
+  }
+
+  .p2 {
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+
+    font-size: 24px;
+    font-weight: 700;
+    color: #0a3f69;
+    text-align: center;
+
+    margin: 0;
+  }
+
+  .p3 {
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+
+    font-size: 18px;
+    font-weight: 700;
+    color: #0a3f69;
+    text-align: center;
+
+    margin: 0;
+  }
+
+  .pBody {
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+
+    color: #4b5563;
+    font-size: 18px;
+  }
+
+  .left {
+    text-align: left;
+
+    @media (min-width: 900px) {
+      text-align: center;
+    }
+  }
+
+  .flex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+
+    .products {
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      gap: 16px;
+    }
+  }
+
+  @media (min-width: 900px) {
+    .products {
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(2, auto);
+    }
+  }
+</style>

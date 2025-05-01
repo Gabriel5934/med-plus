@@ -1,0 +1,160 @@
+---
+import instagram from "../assets/instagram.svg";
+import whatsapp from "../assets/whatsapp.svg";
+import envelope from "../assets/envelope.svg";
+import logo from "../assets/logo.png";
+import list from "../assets/list.svg";
+import Sidebar from "./Sidebar.astro";
+---
+
+<div class="container">
+  <div class="contact">
+    <div class="left">
+      <div><img src={whatsapp.src} alt="" /><span>(12) 99614-6999</span></div>
+      <div>
+        <img src={envelope.src} alt="" /><span
+          >medpluscorretora@medpluscorretora.com.br</span
+        >
+      </div>
+    </div>
+    <div class="right">
+      <a href="https://www.instagram.com/medpluscorretora/"
+        ><img src={instagram.src} alt="" /></a
+      >
+    </div>
+  </div>
+  <div class="nav">
+    <img src={logo.src} alt="" />
+    <div class="links">
+      <a href="#description">Quem somos</a>
+      <a href="#products">Produtos</a>
+      <a href="https://wa.me/5512996146999">Fale conosco</a>
+    </div>
+    <button class="hamburger" id="hamburger">
+      <img src={list.src} alt="" />
+    </button>
+  </div>
+</div>
+
+<Sidebar isOpen={false} />
+
+<script>
+  const hamburger = document.getElementById("hamburger")!;
+  const sidebar = document.querySelector(".sidebar")!;
+  const overlay = document.querySelector(".overlay")!;
+
+  hamburger.addEventListener("click", () => {
+    sidebar.classList.toggle("open");
+  });
+
+  overlay.addEventListener("click", () => {
+    sidebar.classList.remove("open");
+  });
+</script>
+
+<style>
+  span,
+  a {
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+    color: white;
+  }
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    background-color: #0a3f69;
+    flex-direction: column;
+    color: white;
+    position: relative;
+    z-index: 1;
+    max-width: none;
+
+    > div {
+      padding-right: 16px;
+      padding-left: 16px;
+
+      @media (min-width: 900px) {
+        padding-right: 32px;
+        padding-left: 32px;
+      }
+    }
+
+    .contact {
+      display: none;
+      @media (min-width: 900px) {
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid #276da4;
+        padding-top: 16px;
+        padding-bottom: 16px;
+
+        img {
+          width: 24px;
+          height: 24px;
+        }
+
+        .left {
+          display: flex;
+          gap: 16px;
+
+          > div {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+          }
+        }
+      }
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      img {
+        width: 186px;
+
+        @media (min-width: 900px) {
+          width: 279px;
+        }
+      }
+
+      .links {
+        display: none;
+        gap: 32px;
+
+        @media (min-width: 900px) {
+          display: flex;
+        }
+
+        a {
+          font-size: 24px;
+          font-weight: 500;
+          text-decoration: none;
+          text-transform: uppercase;
+        }
+      }
+
+      .hamburger {
+        display: block;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+
+        img {
+          width: 48px;
+          height: 48px;
+        }
+
+        @media (min-width: 900px) {
+          display: none;
+        }
+      }
+    }
+  }
+</style>

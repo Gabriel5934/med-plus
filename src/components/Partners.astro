@@ -1,0 +1,60 @@
+---
+import partner1 from "../assets/partners/1.png";
+import partner2 from "../assets/partners/2.png";
+import partner3 from "../assets/partners/3.png";
+import partner4 from "../assets/partners/4.png";
+import partner5 from "../assets/partners/5.png";
+import partner6 from "../assets/partners/6.webp";
+import rc1 from "../assets/rc/1.png";
+import rc2 from "../assets/rc/2.webp";
+import rc3 from "../assets/rc/3.png";
+import rc4 from "../assets/rc/4.png";
+import rc5 from "../assets/rc/5.png";
+import Button from "./Button.astro";
+---
+
+<div class="shared-container flex">
+  <div class="child">
+    <p class="p1">Seguradoras parceiras</p>
+    <div class="partners">
+      <img src={partner1.src} alt="" />
+      <img src={partner2.src} alt="" />
+      <img src={partner3.src} alt="" />
+      <img src={partner4.src} alt="" />
+      <img src={partner5.src} alt="" />
+      <img src={partner6.src} alt="" />
+    </div>
+  </div>
+  <div class="child">
+    <p class="p2">Responsabilidade Civil Profissional</p>
+    <div class="partners">
+      <img src={rc1.src} alt="" />
+      <img src={rc2.src} alt="" />
+      <img src={rc3.src} alt="" />
+      <img src={rc4.src} alt="" />
+      <img src={rc5.src} alt="" />
+    </div>
+    <Button text="Simular" href="https://www.rc4vc.com/cotacao/medplus" />
+  </div>
+</div>
+
+<style>
+  .child {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+
+    .partners {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+
+      img {
+        width: 100px;
+        object-fit: contain;
+      }
+    }
+  }
+</style>

@@ -1,0 +1,66 @@
+---
+import Product from "./Product.astro";
+import banks from "../assets/banks.png";
+import hand from "../assets/hand.png";
+import globe from "../assets/globe.svg";
+import shield from "../assets/shield.svg";
+---
+
+<div class="shared-container flex">
+  <p class="p1">Principais Produtos</p>
+  <div class="products">
+    <Product
+      title="P2P Lending"
+      description={`
+        Quem investe sabe: imprevistos acontecem.
+  Muitas vezes, você tem um valor aplicado em um investimento promissor, mas quando precisa resgatar antes do prazo, acaba enfrentando dificuldades.
+  Tesouro Direto? Pode ter penalidades em resgates antecipados.
+  Imóveis? Venda pode demorar meses.
+  Renda fixa? Muitas vezes, liquidez só no vencimento.
+  O resultado? Muitos investidores, mesmo tendo patrimônio, acabam sem acesso ao próprio dinheiro e, em situações de emergência, precisam recorrer a empréstimos ou vender ativos de forma desvantajosa.
+  
+  Estamos revolucionando o mercado de investimentos na modalidade P2P Lending. Com rentabilidades atrativas e liquidez a curto e médio prazo, conheça essa forma de investimento segura que mais tem crescido nos últimos anos. Isso significa que você não precisa mais escolher entre boa rentabilidade e acesso ao seu capital. Agora você pode ter os dois.
+        `}
+      src={hand.src}
+    />
+    <Product
+      title="Conta Corrente Protegida"
+      src={shield.src}
+      description={`
+        Abrir uma conta bancária internacional permite que você faça transações bancárias em qualquer lugar do mundo e ainda pode economizar na compra de dólares ou outras moedas em viagens futuras.
+        `}
+    />
+    <Product
+      title="Conta de Investimento Internacional"
+      src={globe.src}
+      description={`
+        ACESSO AO PORTFÓLIO DE INVESTIMENTOS DOS MELHORES BANCOS MUNDIAIS
+Com uma conta de investimento internacional, você garante:
+•	Acesso global aos principais portfólios de investimento, com consultoria especializada em antecipar as movimentações do mercado para maximizar seus investimentos.
+•	Estabilidade para manter seus ativos sempre protegidos, investindo em uma jurisdição de primeiro nível.
+•	Diversificar uma parte de seus ativos em outros países, aumentando suas possibilidades de resultados
+Invista com segurança, transparência, liquidez e excelentes rentabilidades. Aplique nas principais bolsas mundiais, como EUA, EUROPA e ASIA. Diversifique seus investimentos, investindo numa moeda forte, segura e rentável.
+        `}
+    />
+  </div>
+  <div class="partners">
+    <p class="p2">Parceira Oficial</p>
+    <img class="banks" src={banks.src} alt="" />
+  </div>
+</div>
+
+<style>
+  .partners {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+
+    padding: 0 16px;
+
+    .banks {
+      width: 100%;
+      object-fit: contain;
+    }
+  }
+</style>
