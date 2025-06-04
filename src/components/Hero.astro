@@ -1,15 +1,15 @@
 ---
-import background from "../assets/background.jpg";
+import background from "../assets/background2.jpg";
 import Popover from "./Popover.astro";
 import CaretDown from "./icons/CaretDown.astro";
 ---
 
 <div class="wrapper" style={`background-image: url(${background.src})`}>
-  <Popover />
+  <!-- <Popover /> -->
   <div class="hero">
     <div class="text">
       <div class="title">
-        <p class="p3 invite">Conheça a:</p><p class="medplus roboto">
+        <p class="p3 invite">Conheça a:</p><p class="medplus lexend">
           medplus
         </p><p class="sector roboto">corretora de seguros</p>
       </div>
@@ -35,6 +35,7 @@ import CaretDown from "./icons/CaretDown.astro";
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.5);
   }
 
   .hero {
@@ -62,24 +63,33 @@ import CaretDown from "./icons/CaretDown.astro";
         margin: 0;
       }
 
+      .invite {
+        color: white;
+      }
+
       .medplus {
-        font-weight: 900;
-        font-size: 72px;
+        font-weight: 600;
+        font-size: 88px;
         text-transform: uppercase;
-        color: #004b85;
+        color: white;
+        letter-spacing: -10px;
+
+        @media (min-width: 900px) {
+          font-size: 136px;
+        }
       }
 
       .sector {
-        font-size: 24px;
+        font-size: 32px;
         text-transform: uppercase;
-        color: #016fbc;
+        color: white;
       }
     }
 
     .subtitle {
       text-align: center;
-      font-size: 18px;
-      color: #4b5563;
+      font-size: 24px;
+      color: white;
 
       span {
         font-weight: 900;

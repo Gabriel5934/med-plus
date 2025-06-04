@@ -9,6 +9,7 @@ import Partners from "../components/Partners.astro";
 import Investments from "../components/Investments.astro";
 import Contact from "../components/Contact.astro";
 import Footer from "../components/Footer.astro";
+import MDRT from "../components/MDRT.astro";
 ---
 
 <Layout>
@@ -22,6 +23,7 @@ import Footer from "../components/Footer.astro";
   <Products />
   <Partners />
   <Investments />
+  <MDRT />
   <Contact />
 
   <Footer />
@@ -40,7 +42,7 @@ import Footer from "../components/Footer.astro";
   }
 
   .shared-container {
-    padding: 32px 16px;
+    padding: 96px 16px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -55,6 +57,12 @@ import Footer from "../components/Footer.astro";
     font-optical-sizing: auto;
     font-style: normal;
     font-variation-settings: "wdth" 100;
+  }
+
+  .lexend {
+    font-family: "Lexend", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
   }
 
   .p1 {
@@ -91,7 +99,7 @@ import Footer from "../components/Footer.astro";
     font-style: normal;
     font-variation-settings: "wdth" 100;
 
-    font-size: 18px;
+    font-size: 32px;
     font-weight: 700;
     color: #0a3f69;
     text-align: center;

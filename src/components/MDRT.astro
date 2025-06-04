@@ -1,0 +1,91 @@
+---
+import MDRTImage from "../assets/mdrt.png";
+---
+
+<script>
+  function animateValue(
+    element: HTMLElement,
+    start: number,
+    end: number,
+    duration: number
+  ) {
+    let startTimestamp: number | null = null;
+    const step = (timestamp: number) => {
+      if (!startTimestamp) startTimestamp = timestamp;
+      const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+      const current = Math.floor(progress * (end - start) + start);
+      element.textContent = `US$ ${current.toLocaleString()}`;
+      if (progress < 1) {
+        window.requestAnimationFrame(step);
+      }
+    };
+    window.requestAnimationFrame(step);
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const moneyElement = entry.target as HTMLElement;
+            animateValue(moneyElement, 0, 1000000, 2000);
+            observer.unobserve(moneyElement);
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    const moneyElement = document.getElementById("money-counter");
+    if (moneyElement) {
+      observer.observe(moneyElement);
+    }
+  });
+</script>
+
+<div class="shared-container">
+  <div class="content">
+    <img src={MDRTImage.src} alt="MDRT" />
+    <div class="text">
+      <span class="p3">Membro do MDRT</span>
+      <span class="pBody"
+        >Associação exclusiva de corretores de seguros com mais de
+      </span>
+      <span id="money-counter" class="money roboto">US$ 0</span>
+      <span class="p3">em seguro de vida</span>
+    </div>
+  </div>
+</div>
+
+<style>
+  img {
+    width: 340px;
+  }
+
+  .content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    max-width: 900px;
+    text-align: center;
+    gap: 32px;
+
+    @media (min-width: 900px) {
+      flex-direction: row;
+    }
+  }
+
+  .text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .money {
+    color: #0a3f69;
+    font-size: 64px;
+    font-weight: 700;
+  }
+</style>
