@@ -6,10 +6,11 @@ import piggy from "../assets/piggy.svg";
 import people from "../assets/people.svg";
 import doctor from "../assets/doctor.png";
 import plane from "../assets/airplane.svg";
+import life from "../assets/life.png";
+import hand from "../assets/hand.svg";
 ---
 
 <div class="shared-container flex" id="products">
-  <p class="p1">Principais Produtos</p>
   <div class="products">
     <Product
       title="Seguro de Renda"
@@ -61,6 +62,22 @@ import plane from "../assets/airplane.svg";
         O Seguro Viagem é um item básico e deve estar presente em todas as viagens, seja a passeio ou a negócios, pois ele pode evitar danos e muitos outros transtornos. Principais Coberturas do Seguro Viagem: Acidentes Pessoais, Assistência médica, odontológica, remoção intra-hospitalar, extravio de bagagens, dentre outras coberturas.
       `}
       src={plane.src}
+    />
+    <Product
+      title="Seguro Saúde Nacional e Global"
+      description={`
+        Seja nosso segurado nas principais seguradoras nacionais: como Sul América, Seguros Unimed, Porto Seguro Saúde, Bradesco Seguros 
+        \n Internacionais: VUMI, Best Doctors Insurance, GEO BLUE, CIGNA
+      `}
+      src={life.src}
+    />
+    <Product
+      title="Seguro por invalidez permanente total por acidente majorada (seguro das mãos)"
+      description={`
+        Proteger o seu futuro financeiro em caso de um novo contexto.
+        Garantir sua autonomia financeira em caso de um acidente. Imagina ter que parar de trabalhar, não produzir renda e prejudicar todo o seu planejamento financeiro por conta de um imprevisto? Ninguém quer e espera por isso, mas se prevenir nunca é demais
+      `}
+      src={hand.src}
     />
   </div>
 </div>

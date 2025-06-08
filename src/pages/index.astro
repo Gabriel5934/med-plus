@@ -10,6 +10,7 @@ import Investments from "../components/Investments.astro";
 import Contact from "../components/Contact.astro";
 import Footer from "../components/Footer.astro";
 import MDRT from "../components/MDRT.astro";
+import Section from "../components/Section.astro";
 ---
 
 <Layout>
@@ -20,8 +21,11 @@ import MDRT from "../components/MDRT.astro";
 
   <Photos />
   <Description />
+  <Section title="Principais Produtos" />
   <Products />
+  <Section title="Seguradoras Parceiras" />
   <Partners />
+  <Section title="Investimentos" />
   <Investments />
   <MDRT />
   <Contact />
@@ -42,7 +46,7 @@ import MDRT from "../components/MDRT.astro";
   }
 
   .shared-container {
-    padding: 96px 16px;
+    padding: 32px 16px;
     display: flex;
     flex-direction: column;
     align-items: center;

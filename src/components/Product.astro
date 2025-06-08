@@ -5,9 +5,10 @@ interface Props {
   title: string;
   description: string;
   src: string;
+  illustration?: string;
 }
 
-const { title, description, src } = Astro.props;
+const { title, description, src, illustration } = Astro.props;
 ---
 
 <div
@@ -23,7 +24,8 @@ const { title, description, src } = Astro.props;
 <dialog id={title + "_modal"} class="modal">
   <div class="modal-box">
     <h3 class="font-bold text-lg">{title}</h3>
-    <p class="py-4">{description}</p>
+    <p class="py-4" style="white-space: pre-line;">{description}</p>
+    <img src={illustration} alt="" />
   </div>
   <form method="dialog" class="modal-backdrop">
     <button>close</button>
@@ -71,6 +73,7 @@ const { title, description, src } = Astro.props;
       img {
         width: 48px;
         height: 48px;
+        filter: grayscale(100%) contrast(200%) brightness(120%);
       }
     }
   }

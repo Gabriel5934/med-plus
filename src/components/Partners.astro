@@ -5,6 +5,7 @@ import partner3 from "../assets/partners/3.png";
 import partner4 from "../assets/partners/4.png";
 import partner5 from "../assets/partners/5.png";
 import partner6 from "../assets/partners/6.webp";
+import partner7 from "../assets/partners/7.svg";
 import rc1 from "../assets/rc/1.png";
 import rc2 from "../assets/rc/2.png";
 import rc3 from "../assets/rc/3.png";
@@ -16,7 +17,7 @@ import Button from "./Button.astro";
 
 <div class="shared-container flex">
   <div class="child">
-    <p class="p1">Seguradoras parceiras</p>
+    <!-- <p class="p1">Seguradoras parceiras</p> -->
     <div class="partners">
       <img src={partner1.src} alt="" />
       <img src={partner2.src} alt="" />
@@ -24,10 +25,11 @@ import Button from "./Button.astro";
       <img src={partner4.src} alt="" />
       <img src={partner5.src} alt="" />
       <img src={partner6.src} alt="" />
+      <img src={partner7.src} alt="" />
     </div>
   </div>
   <div class="child">
-    <p class="p2">Responsabilidade Civil Profissional</p>
+    <p class="p1">Responsabilidade Civil Profissional</p>
     <div class="partners">
       <img src={rc1.src} alt="" />
       <img src={rc2.src} alt="" />
@@ -37,19 +39,24 @@ import Button from "./Button.astro";
       <img src={rc6.src} alt="" />
     </div>
     <Button
-      text="Simular"
+      text="Faça Cotação do seu Seguro RCP ON-LINE"
       href="https://www.rc4vc.com/cotacao/medplus"
       external
+      textAsIs
     />
   </div>
 </div>
 
 <style>
+  p {
+    font-size: 40px !important;
+  }
+
   .child {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 16px;
+    gap: 40px;
     width: 100%;
     max-width: 900px;
 
@@ -65,6 +72,10 @@ import Button from "./Button.astro";
         width: 100px;
         object-fit: contain;
       }
+    }
+
+    &:last-child {
+      margin-top: 32px;
     }
   }
 </style>

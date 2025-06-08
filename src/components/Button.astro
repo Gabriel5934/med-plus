@@ -1,15 +1,28 @@
 ---
+import instagram from "../assets/instagram.svg";
+
 interface Props {
   text: string;
   href: string;
   external?: boolean;
+  textAsIs?: boolean;
+  instagramIcon?: boolean;
 }
 
-const { text, href, external = false } = Astro.props;
+const {
+  text,
+  href,
+  external = false,
+  textAsIs = false,
+  instagramIcon = false,
+} = Astro.props;
 ---
 
 <a href={href} target={external ? "_blank" : "_self"}>
-  <button>{text}</button>
+  <button style={textAsIs ? "text-transform: none;" : ""}>
+    {instagramIcon ? <img src={instagram.src} alt="" /> : ""}
+    {text}
+  </button>
 </a>
 
 <style>
@@ -18,6 +31,14 @@ const { text, href, external = false } = Astro.props;
     border: none;
     border-radius: 54px;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    img {
+      width: 32px;
+      height: 32px;
+    }
 
     font-family: "Roboto", sans-serif;
     font-optical-sizing: auto;

@@ -1,5 +1,5 @@
 ---
-import background from "../assets/background2.jpg";
+import background from "../assets/family.jpg";
 import Popover from "./Popover.astro";
 import CaretDown from "./icons/CaretDown.astro";
 ---
@@ -8,11 +8,11 @@ import CaretDown from "./icons/CaretDown.astro";
   <!-- <Popover /> -->
   <div class="hero">
     <div class="text">
-      <div class="title">
+      <!-- <div class="title">
         <p class="p3 invite">Conheça a:</p><p class="medplus lexend">
           medplus
         </p><p class="sector roboto">corretora de seguros</p>
-      </div>
+      </div> -->
       <p class="subtitle roboto">
         Mais que um seguro <br /> somos uma consultoria independente <br /> que se
         preocupa com <span>você</span>
@@ -33,9 +33,11 @@ import CaretDown from "./icons/CaretDown.astro";
     height: 100%;
     align-items: center;
     background-size: cover;
-    background-position: center;
+    background-position: left;
     background-repeat: no-repeat;
-    box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.5);
+    box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.6);
+    /* background-size: 50% 100%;
+    background-color: #d5d7d0; */
   }
 
   .hero {
@@ -43,8 +45,9 @@ import CaretDown from "./icons/CaretDown.astro";
     height: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-end;
     justify-content: center;
+    padding-right: 100px;
 
     .text {
       display: flex;
@@ -87,7 +90,7 @@ import CaretDown from "./icons/CaretDown.astro";
     }
 
     .subtitle {
-      text-align: center;
+      text-align: right;
       font-size: 24px;
       color: white;
 

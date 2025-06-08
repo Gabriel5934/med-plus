@@ -3,11 +3,15 @@ import Product from "./Product.astro";
 import banks from "../assets/banks.png";
 import hand from "../assets/hand.png";
 import globe from "../assets/globe.svg";
-import shield from "../assets/shield.svg";
+import bank from "../assets/bank.svg";
+import ica from "../assets/ica.svg";
+import shield from "../assets/shield-bank.svg";
+import shieldIcon from "../assets/shield.svg";
+import dominion from "../assets/dominion.svg";
+import shieldInfo from "../assets/shieldInfo.jpg";
 ---
 
 <div class="shared-container flex">
-  <p class="p1">Principais Produtos</p>
   <div class="products">
     <Product
       title="P2P Lending"
@@ -25,7 +29,7 @@ import shield from "../assets/shield.svg";
     />
     <Product
       title="Conta Corrente Protegida"
-      src={shield.src}
+      src={shieldIcon.src}
       description={`
         Abrir uma conta bancária internacional permite que você faça transações bancárias em qualquer lugar do mundo e ainda pode economizar na compra de dólares ou outras moedas em viagens futuras.
         `}
@@ -42,24 +46,32 @@ Com uma conta de investimento internacional, você garante:
 Invista com segurança, transparência, liquidez e excelentes rentabilidades. Aplique nas principais bolsas mundiais, como EUA, EUROPA e ASIA. Diversifique seus investimentos, investindo numa moeda forte, segura e rentável.
         `}
     />
+    <Product
+      title="Correspondente Bancário Nacional"
+      src={bank.src}
+      description=""
+      illustration={shieldInfo.src}
+    />
   </div>
+  <span class="p1">Parceiros Oficiais</span>
   <div class="partners">
-    <p class="p2">Parceira Oficial</p>
-    <img class="banks" src={banks.src} alt="" />
+    <img src={ica.src} alt="" />
+    <img src={shield.src} alt="" />
+    <img src={dominion.src} alt="" />
   </div>
 </div>
 
 <style>
   .partners {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     align-items: center;
-    gap: 16px;
+    justify-items: center;
+    gap: 32px;
+    width: 100%;
 
-    padding: 0 16px;
-
-    .banks {
-      width: 100%;
+    img {
+      width: 200px;
       object-fit: contain;
     }
   }
