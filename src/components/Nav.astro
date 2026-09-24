@@ -1,9 +1,9 @@
 ---
-import instagram from "../assets/instagram.svg";
-import whatsapp from "../assets/whatsapp.svg";
-import envelope from "../assets/envelope.svg";
-import logo from "../assets/logoMetal.png";
-import list from "../assets/list.svg";
+import instagram from "../assets/bootstrap/instagram.svg";
+import whatsapp from "../assets/bootstrap/whatsapp.svg";
+import envelope from "../assets/bootstrap/envelope.svg";
+import logo from "../assets/medplus-mark.svg";
+import list from "../assets/bootstrap/list.svg";
 import Sidebar from "./Sidebar.astro";
 ---
 
@@ -24,7 +24,7 @@ import Sidebar from "./Sidebar.astro";
     </div>
   </div>
   <div class="nav">
-    <img src={logo.src} alt="" />
+    <img class="brand-mark" src={logo.src} alt="Med Plus" />
     <div class="links">
       <a href="#description">Quem somos</a>
       <a href="#products">Produtos</a>
@@ -113,11 +113,13 @@ import Sidebar from "./Sidebar.astro";
       justify-content: space-between;
       align-items: center;
 
-      img {
-        width: 186px;
+      > .brand-mark {
+        width: auto;
+        height: 54px;
+        filter: brightness(0) invert(1);
 
         @media (min-width: 900px) {
-          width: 279px;
+          height: 68px;
         }
       }
 

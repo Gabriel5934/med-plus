@@ -1,7 +1,3 @@
----
-import MDRTImage from "../assets/mdrt.png";
----
-
 <script>
   function animateValue(
     element: HTMLElement,
@@ -45,9 +41,9 @@ import MDRTImage from "../assets/mdrt.png";
 
 <div class="shared-container">
   <div class="content">
-    <img src={MDRTImage.src} alt="MDRT" />
+    <div class="mdrt-wordmark" aria-label="MDRT, marca registrada">MDRT<sup>®</sup></div>
     <div class="text">
-      <span class="p3">Membro do MDRT</span>
+      <span class="p3">Membro do MDRT<sup>®</sup></span>
       <span class="pBody"
         >Associação exclusiva de corretores de seguros com mais de
       </span>
@@ -58,8 +54,22 @@ import MDRTImage from "../assets/mdrt.png";
 </div>
 
 <style>
-  img {
-    width: 340px;
+  .mdrt-wordmark {
+    color: #0a3f69;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(72px, 11vw, 132px);
+    font-weight: 700;
+    letter-spacing: -0.08em;
+    line-height: 0.85;
+  }
+
+  .mdrt-wordmark sup,
+  .p3 sup {
+    font-family: "Roboto", sans-serif;
+    font-size: 0.2em;
+    letter-spacing: 0;
+    margin-left: 0.12em;
+    vertical-align: top;
   }
 
   .content {
