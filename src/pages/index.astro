@@ -1,152 +1,151 @@
 ---
-import Hero from "../components/Hero.astro";
-import Nav from "../components/Nav.astro";
-import Layout from "../layouts/Layout.astro";
-import Photos from "../components/Photos.astro";
-import Description from "../components/Description.astro";
-import Products from "../components/Products.astro";
-import Partners from "../components/Partners.astro";
-import Investments from "../components/Investments.astro";
-import Contact from "../components/Contact.astro";
-import Footer from "../components/Footer.astro";
-import MDRT from "../components/MDRT.astro";
-import Section from "../components/Section.astro";
+import { Image } from "astro:assets";
+import family from "../assets/family.jpg";
+import logo from "../assets/medplus-mark.svg";
+import coin from "../assets/bootstrap/coin.svg";
+import people from "../assets/bootstrap/people.svg";
+import stethoscope from "../assets/bootstrap/heart-pulse.svg";
+import doctor from "../assets/bootstrap/person-badge.svg";
+import piggy from "../assets/bootstrap/piggy-bank.svg";
+import plane from "../assets/bootstrap/airplane.svg";
+import life from "../assets/bootstrap/hospital.svg";
+import hand from "../assets/bootstrap/hand-index-thumb.svg";
+import partner1 from "../assets/partners/1.png";
+import partner2 from "../assets/partners/2.png";
+import partner3 from "../assets/partners/3.png";
+import partner4 from "../assets/partners/4.png";
+import partner5 from "../assets/partners/5.png";
+import partner6 from "../assets/partners/6.webp";
+import partner7 from "../assets/partners/7.svg";
+import partner8 from "../assets/partners/8.png";
+import partner9 from "../assets/partners/9.png";
+import partner10 from "../assets/partners/10.png";
+import partner11 from "../assets/partners/11.png";
+import partner12 from "../assets/partners/12.webp";
+import partner13 from "../assets/partners/13.png";
+import "../styles/index.css";
+
+const products = [
+  { icon: coin, title: "Seguro de Renda", text: "Proteção financeira para profissionais que precisam se afastar do trabalho por doença, acidente ou cirurgia, mantendo seus compromissos durante a recuperação." },
+  { icon: people, title: "Seguro de Vida", text: "Proteção para quem você ama e coberturas que podem ser utilizadas em vida, como invalidez, auxílio funeral e incapacidade temporária." },
+  { icon: stethoscope, title: "Doenças Graves — DG30", text: "Ajuda financeira após o diagnóstico de doenças graves, para apoiar o tratamento, manter as contas em dia e preservar seu padrão de vida." },
+  { icon: doctor, title: "Responsabilidade Civil Profissional", text: "Proteção diante de reclamações e ações judiciais por danos involuntários, incluindo custos de defesa, indenizações e acordos." },
+  { icon: piggy, title: "Previdência Privada", text: "Planejamento de longo prazo para acumular recursos e construir uma aposentadoria alinhada aos seus objetivos e perfil financeiro." },
+  { icon: plane, title: "Seguro Viagem", text: "Assistência em viagens nacionais e internacionais, com coberturas para acidentes, atendimento médico e odontológico e extravio de bagagem." },
+  { icon: life, title: "Seguro Saúde Nacional e Global", text: "Acesso a opções de seguradoras nacionais e internacionais, de acordo com as necessidades do seu perfil." },
+  { icon: hand, title: "Seguro das Mãos", text: "Proteção da autonomia financeira em caso de invalidez permanente total por acidente, especialmente relevante para profissionais que dependem das mãos para trabalhar." },
+];
+
+const partners = [
+  partner1,
+  partner2,
+  partner3,
+  partner4,
+  partner5,
+  partner6,
+  partner7,
+  partner8,
+  partner9,
+  partner10,
+  partner11,
+  partner12,
+  partner13,
+];
 ---
 
-<Layout>
-  <div class="start">
-    <Nav />
-    <Hero />
-  </div>
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content="Consultoria independente em seguros e investimentos há mais de 25 anos." />
+    <meta property="og:image" content="/og-med-plus.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Símbolo da Med Plus em branco sobre fundo azul" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>Med Plus — Versão Editorial</title>
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#inicio" aria-label="Med Plus — início"><img src={logo.src} alt="Med Plus Corretora de Seguros" width="823" height="604" /></a>
+      <nav aria-label="Navegação principal">
+        <a href="#sobre">Quem somos</a><a href="#produtos">Soluções</a><a href="#parceiros">Parceiros</a>
+      </nav>
+      <a class="small-cta" href="https://wa.me/5512996146999">Fale conosco <span>↗</span></a>
+    </header>
 
-  <Photos />
-  <Description />
-  <Section title="Principais Produtos" />
-  <Products />
-  <Section title="Seguradoras Parceiras" />
-  <Partners />
-  <Section title="Investimentos" />
-  <Investments />
-  <MDRT />
-  <Contact />
+    <main>
+      <section class="hero" id="inicio">
+        <Image
+          class="hero-image"
+          src={family}
+          alt=""
+          width={2560}
+          widths={[480, 768, 1024, 1440, 1920, 2560]}
+          sizes="100vw"
+          loading="eager"
+          fetchpriority="high"
+        />
+        <div class="hero-copy">
+          <p class="eyebrow">Consultoria independente · Desde 1999</p>
+          <h1>Proteção que começa <em>ouvindo você.</em></h1>
+          <p class="lead">Mais que um seguro, uma consultoria independente para cuidar da sua vida, da sua carreira e do seu patrimônio.</p>
+          <div class="hero-actions">
+            <a class="button primary" href="https://wa.me/5512996146999">Conversar com um consultor</a>
+            <a class="text-link" href="#produtos">Conhecer soluções ↓</a>
+          </div>
+        </div>
+        <div class="hero-proof"><strong>25+</strong><span>anos protegendo<br />vidas e trajetórias</span></div>
+      </section>
 
-  <Footer />
-</Layout>
+      <section class="manifesto wrap" id="sobre">
+        <p class="kicker">O jeito Med Plus</p>
+        <div class="manifesto-grid">
+          <h2>Cada pessoa tem uma necessidade. Cada escolha merece atenção.</h2>
+          <div>
+            <p>Mais do que vender seguros, oferecemos um trabalho de consultoria. Analisamos seu momento e buscamos produtos das principais seguradoras do mercado, específicos para a sua necessidade.</p>
+            <p>Por trabalharmos com diferentes seguradoras, encontramos opções de forma exclusiva e independente, com imparcialidade na indicação da melhor solução.</p>
+          </div>
+        </div>
+      </section>
 
-<style is:global>
-  @import "tailwindcss";
-  @plugin "daisyui" {
-    themes: light;
-  }
+      <section class="solutions" id="produtos">
+        <div class="wrap section-head"><div><p class="kicker">Proteção sob medida</p><h2>Soluções para o que importa agora — e depois.</h2></div><p>Selecione uma solução para entender como ela pode apoiar você.</p></div>
+        <div class="product-grid wrap">
+          {products.map((product, index) => (
+            <article class:list={["product-card", index === 0 && "featured"]}>
+              <span class="number">0{index + 1}</span>
+              <img src={product.icon.src} alt="" loading="lazy" />
+              <h3>{product.title}</h3>
+              <p>{product.text}</p>
+              {product.title === "Responsabilidade Civil Profissional" ? <a href="https://www.rc4vc.com/cotacao/medplus" target="_blank" rel="noreferrer">Fazer cotação on-line ↗</a> : <a href="https://wa.me/5512996146999">Quero saber mais ↗</a>}
+            </article>
+          ))}
+        </div>
+      </section>
 
-  .start {
-    height: 100svh;
-    display: flex;
-    flex-direction: column;
-  }
+      <section class="recognition">
+        <div class="wrap">
+          <div><p class="kicker">Reconhecimento internacional</p><h2>Membro do MDRT<sup>®</sup></h2><p>Associação exclusiva de corretores de seguros com mais de <strong>US$ 1 milhão</strong> em seguro de vida.</p></div>
+        </div>
+      </section>
 
-  .shared-container {
-    padding: 32px 16px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+      <section class="partners wrap" id="parceiros">
+        <p class="kicker">Escolha e independência</p><h2>Principais seguradoras parceiras</h2>
+        <div class="logo-wall">{partners.map((partner) => <div><Image src={partner} alt="Logotipo de seguradora parceira" loading="lazy" /></div>)}</div>
+      </section>
 
-    * {
-      max-width: 900px;
-    }
-  }
+      <section class="contact wrap">
+        <div><p class="kicker">Próximo passo</p><h2>Vamos encontrar a proteção certa para você?</h2></div>
+        <div class="contact-actions"><a class="button light" href="https://wa.me/5512996146999">Falar pelo WhatsApp</a><a href="https://www.instagram.com/medpluscorretora/" target="_blank" rel="noreferrer">@medpluscorretora ↗</a></div>
+      </section>
+    </main>
 
-  .roboto {
-    font-family: "Roboto", sans-serif;
-    font-optical-sizing: auto;
-    font-style: normal;
-    font-variation-settings: "wdth" 100;
-  }
-
-  .lexend {
-    font-family: "Lexend", sans-serif;
-    font-optical-sizing: auto;
-    font-style: normal;
-  }
-
-  .p1 {
-    font-family: "Roboto", sans-serif;
-    font-optical-sizing: auto;
-    font-style: normal;
-    font-variation-settings: "wdth" 100;
-
-    font-size: 32px;
-    font-weight: 700;
-    color: #0a3f69;
-    text-align: center;
-
-    margin: 0;
-  }
-
-  .p2 {
-    font-family: "Roboto", sans-serif;
-    font-optical-sizing: auto;
-    font-style: normal;
-    font-variation-settings: "wdth" 100;
-
-    font-size: 24px;
-    font-weight: 700;
-    color: #0a3f69;
-    text-align: center;
-
-    margin: 0;
-  }
-
-  .p3 {
-    font-family: "Roboto", sans-serif;
-    font-optical-sizing: auto;
-    font-style: normal;
-    font-variation-settings: "wdth" 100;
-
-    font-size: 32px;
-    font-weight: 700;
-    color: #0a3f69;
-    text-align: center;
-
-    margin: 0;
-  }
-
-  .pBody {
-    font-family: "Roboto", sans-serif;
-    font-optical-sizing: auto;
-    font-style: normal;
-    font-variation-settings: "wdth" 100;
-
-    color: #4b5563;
-    font-size: 18px;
-  }
-
-  .left {
-    text-align: left;
-
-    @media (min-width: 900px) {
-      text-align: center;
-    }
-  }
-
-  .flex {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 32px;
-
-    .products {
-      width: 100%;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-      gap: 16px;
-    }
-  }
-
-  @media (min-width: 900px) {
-    .products {
-      grid-template-columns: repeat(3, 1fr);
-      grid-template-rows: repeat(2, auto);
-    }
-  }
-</style>
+    <footer>
+      <div class="wrap footer-grid"><div><img src={logo.src} alt="Med Plus" width="823" height="604" loading="lazy" /><p>Consultoria independente em seguros e investimentos.</p></div><div><h2>Taubaté</h2><p>Rua Dr. Souza Alves, 384 — Sala 504<br />Centro — Taubaté — SP</p></div><div><h2>São José dos Campos</h2><p>Rua Euclides Miragaia, 145 — Sala 610<br />Centro — São José dos Campos — SP</p></div><div><h2>Contato</h2><p>(12) 3633-7199 · 3622-4044<br />(12) 99738-7999 · 99152-7999<br /><a href="mailto:medpluscorretora@medpluscorretora.com.br">medpluscorretora@medpluscorretora.com.br</a></p></div></div>
+      <div class="wrap copyright">© 2026 Med Plus Corretora de Seguros — Todos os direitos reservados.</div>
+    </footer>
+  </body>
+</html>

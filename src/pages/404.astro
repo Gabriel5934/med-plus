@@ -1,0 +1,124 @@
+---
+import logo from "../assets/medplus-mark.svg";
+import "../styles/index.css";
+---
+
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="robots" content="noindex, follow" />
+    <meta name="description" content="A página solicitada não foi encontrada." />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>Página não encontrada — Med Plus</title>
+  </head>
+  <body>
+    <header class="error-topbar">
+      <a href="/" aria-label="Med Plus — início">
+        <img src={logo.src} alt="Med Plus Corretora de Seguros" width="823" height="604" />
+      </a>
+    </header>
+
+    <main class="error-page">
+      <div class="error-content">
+        <p class="error-code" aria-hidden="true">404</p>
+        <p class="kicker">Página não encontrada</p>
+        <h1>Este caminho não leva aonde você esperava.</h1>
+        <p class="error-copy">O endereço pode ter mudado ou não existir mais. Volte ao início para continuar navegando.</p>
+        <a class="button primary" href="/">Voltar ao início</a>
+      </div>
+    </main>
+  </body>
+</html>
+
+<style>
+  .error-topbar {
+    height: 88px;
+    padding: 0 max(20px, calc((100vw - 1180px) / 2));
+    display: flex;
+    align-items: center;
+    background: white;
+  }
+
+  .error-topbar img {
+    display: block;
+    width: auto;
+    height: 52px;
+  }
+
+  .error-page {
+    min-height: calc(100svh - 88px);
+    padding: clamp(64px, 10vw, 120px) max(20px, calc((100vw - 1180px) / 2));
+    display: grid;
+    align-items: center;
+    overflow: hidden;
+    background: var(--navy);
+    color: white;
+  }
+
+  .error-content {
+    position: relative;
+    z-index: 1;
+    max-width: 780px;
+  }
+
+  .error-code {
+    position: absolute;
+    z-index: -1;
+    top: 50%;
+    left: clamp(240px, 40vw, 610px);
+    margin: 0;
+    color: rgba(117, 212, 244, 0.1);
+    font: 800 clamp(13rem, 34vw, 32rem) / 0.75 "Manrope", sans-serif;
+    letter-spacing: -0.09em;
+    transform: translateY(-50%);
+    pointer-events: none;
+    user-select: none;
+  }
+
+  .error-page .kicker {
+    color: #75d4f4;
+  }
+
+  .error-page h1 {
+    max-width: 750px;
+    margin-bottom: 28px;
+    font-size: clamp(3.2rem, 7vw, 7rem);
+  }
+
+  .error-copy {
+    max-width: 580px;
+    margin: 0 0 38px;
+    color: #dcebf0;
+    font-size: clamp(1.05rem, 2vw, 1.25rem);
+  }
+
+  @media (max-width: 600px) {
+    .error-topbar {
+      height: 76px;
+      padding-inline: 14px;
+    }
+
+    .error-topbar img {
+      height: 42px;
+    }
+
+    .error-page {
+      min-height: calc(100svh - 76px);
+      padding-inline: 20px;
+    }
+
+    .error-code {
+      top: -30px;
+      right: -30px;
+      left: auto;
+      font-size: 13rem;
+      transform: none;
+    }
+
+    .error-page h1 {
+      font-size: clamp(3rem, 15vw, 4.6rem);
+    }
+  }
+</style>
