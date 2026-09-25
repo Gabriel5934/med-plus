@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "astro": "^5.7.5",
-    "install": "^0.13.0"
+    "install": "^0.13.0",
+    "sharp": "^0.33.5"
   }
 }

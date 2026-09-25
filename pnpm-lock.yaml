@@ -3,10 +3,12 @@ lockfileVersion: 5.4
 specifiers:
   astro: ^5.7.5
   install: ^0.13.0
+  sharp: ^0.33.5
 
 dependencies:
   astro: 5.7.5
   install: 0.13.0
+  sharp: 0.33.5
 
 packages:
 
