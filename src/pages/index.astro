@@ -16,13 +16,15 @@ import partner3 from "../assets/partners/3.png";
 import partner4 from "../assets/partners/4.png";
 import partner5 from "../assets/partners/5.png";
 import partner6 from "../assets/partners/6.webp";
-import partner7 from "../assets/partners/7.svg";
 import partner8 from "../assets/partners/8.png";
 import partner9 from "../assets/partners/9.png";
 import partner10 from "../assets/partners/10.png";
 import partner11 from "../assets/partners/11.png";
 import partner12 from "../assets/partners/12.webp";
 import partner13 from "../assets/partners/13.png";
+import partner14 from "../assets/partners/14.png";
+import partner15 from "../assets/partners/15.png";
+import partner16 from "../assets/partners/16.svg";
 import "../styles/index.css";
 
 const products = [
@@ -69,19 +71,21 @@ const products = [
 ];
 
 const partners = [
-  partner1,
-  partner2,
-  partner3,
-  partner4,
-  partner5,
-  partner6,
-  partner7,
-  partner8,
-  partner9,
-  partner10,
-  partner11,
-  partner12,
-  partner13,
+  { logo: partner1, name: "Seguros Unimed", url: "https://www.segurosunimed.com.br" },
+  { logo: partner2, name: "AZOS", url: "https://www.azos.com.br" },
+  { logo: partner3, name: "Allianz", url: "https://www.allianz.com.br" },
+  { logo: partner4, name: "Porto Seguro", url: "https://www.portoseguro.com.br" },
+  { logo: partner5, name: "SulAmérica", url: "https://www.sulamericaseguros.com.br" },
+  { logo: partner6, name: "Tokio Marine Seguradora", url: "https://www.tokiomarine.com.br" },
+  { logo: partner8, name: "FF Seguros", url: "https://www.fairfax.com.br" },
+  { logo: partner9, name: "Chubb", url: "https://www.chubb.com/br" },
+  { logo: partner10, name: "Akad Seguros", url: "https://www.akadseguros.com.br" },
+  { logo: partner11, name: "Fator Seguradora", url: "https://www.fatorseguradora.com.br" },
+  { logo: partner12, name: "Excelsior Seguros", url: "https://www.excelsiorseguros.com.br" },
+  { logo: partner13, name: "ANADEM", url: "https://www.anadem.org.br" },
+  { logo: partner14, name: "Capemisa Seguradora", url: "https://www.capemisa.com.br" },
+  { logo: partner15, name: "MAG Seguros", url: "https://www.mag.com.br" },
+  { logo: partner16, name: "Juspromed", url: "https://juspromed.com/" },
 ];
 ---
 
@@ -92,7 +96,7 @@ const partners = [
     <meta name="viewport" content="width=device-width" />
     <meta
       name="description"
-      content="Consultoria independente em seguros e investimentos há mais de 25 anos."
+      content="Consultoria independente em seguros e investimentos há mais de 30 anos."
     />
     <meta property="og:image" content="/og-med-plus.png" />
     <meta property="og:image:type" content="image/png" />
@@ -114,6 +118,10 @@ const partners = [
           width="823"
           height="604"
         />
+        <span class="brand-text">
+          <span class="brand-name">MEDPLUS</span>
+          <span class="brand-tagline">SEGUROS E INVESTIMENTOS</span>
+        </span>
       </a>
       <nav aria-label="Navegação principal">
         <a href="#sobre">Quem somos</a>
@@ -156,7 +164,7 @@ const partners = [
           </div>
         </div>
         <div class="hero-proof">
-          <strong>25+</strong>
+          <strong>30+</strong>
           <span>
             anos protegendo
             <br />
@@ -235,13 +243,15 @@ const partners = [
         <h2>Principais seguradoras parceiras</h2>
         <div class="logo-wall">
           {partners.map((partner) => (
-            <div>
-              <Image
-                src={partner}
-                alt="Logotipo de seguradora parceira"
-                loading="lazy"
-              />
-            </div>
+            <a
+              class="partner-tile"
+              href={partner.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`${partner.name} (abre em nova aba)`}
+            >
+              <Image src={partner.logo} alt={partner.name} loading="lazy" />
+            </a>
           ))}
         </div>
       </section>
@@ -269,29 +279,35 @@ const partners = [
     <footer>
       <div class="wrap footer-grid">
         <div>
-          <img
-            src={logo.src}
-            alt="Med Plus"
-            width="823"
-            height="604"
-            loading="lazy"
-          />
+          <div class="footer-brand">
+            <img
+              src={logo.src}
+              alt="Med Plus"
+              width="823"
+              height="604"
+              loading="lazy"
+            />
+            <span class="brand-text">
+              <span class="brand-name">MEDPLUS</span>
+              <span class="brand-tagline">SEGUROS E INVESTIMENTOS</span>
+            </span>
+          </div>
           <p>Consultoria independente em seguros e investimentos.</p>
         </div>
         <div>
           <h2>Endereço</h2>
           <p>
-            Rua Dr. Souza Alves, 384 — Sala 504
+            Av. Itália, 928 — Sala 610
             <br />
-            Centro — Taubaté — SP
+            Jardim das Nações — Taubaté — SP
           </p>
         </div>
         <div>
           <h2>Contato</h2>
           <p>
-            (12) 3633-7199 · 3622-4044
+            (12) 3633-7199
             <br />
-            (12) 99738-7999 · 99152-7999
+            (12) 99614-6999 · 99152-7999
             <br />
             <a href="mailto:medpluscorretora@medpluscorretora.com.br">
               medpluscorretora@medpluscorretora.com.br
